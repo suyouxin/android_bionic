@@ -16,5 +16,33 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#define LINUX_VERSION_CODE 197895
-#define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))
+#ifndef _PXA_ION_H
+#define _PXA_ION_H
+#include <linux/ion.h>
+struct ion_pxa_region {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct ion_handle *handle;
+ unsigned long addr;
+ size_t len;
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define ION_PXA_PHYS 1
+#define ION_PXA_SYNC 2
+enum {
+ PXA_DMA_BIDIRECTIONAL = 0,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ PXA_DMA_TO_DEVICE = 1,
+ PXA_DMA_FROM_DEVICE = 2,
+ PXA_DMA_NONE = 3,
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct ion_pxa_cache_region {
+ int fd;
+ struct ion_handle *handle;
+ unsigned long offset;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ size_t len;
+ unsigned int dir;
+};
+#endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
